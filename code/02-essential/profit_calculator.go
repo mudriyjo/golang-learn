@@ -11,20 +11,11 @@ import "fmt"
  Print all result to console
 */
 func main() {
-	var revenue, expenses, taxRate float64
-
-	fmt.Print("Write your Revenue:")
-	fmt.Scan(&revenue)
-
-	fmt.Print("Write your Expenses:")
-	fmt.Scan(&expenses)
-
-	fmt.Print("Write your Tax rate:")
-	fmt.Scan(&taxRate)
+	revenue := askAndScan("Write your Revenue:")
+	expenses := askAndScan("Write your Expenses:")
+	taxRate := askAndScan("Write your Tax rate:")
 	
-	earningBeforeTax := revenue - expenses
-	earningAfterTax := (revenue  - expenses) * (1 - taxRate / 100)
-	ratio := earningBeforeTax / earningAfterTax
+	earningBeforeTax, earningAfterTax, ratio := calculateEbtEatAndRatio(revenue, expenses, taxRate)
 
 	fmt.Print("Earning before tax is: ")
 	fmt.Println(earningBeforeTax)
@@ -34,4 +25,18 @@ func main() {
 
 	fmt.Print("Ratio is: ")
 	fmt.Println(ratio)
+}
+
+func askAndScan(ask string) float64 {
+	var result float64
+	fmt.Print(ask)
+	fmt.Scan(&result)
+	return result
+}
+
+func calculateEbtEatAndRatio(revenue, expenses, taxRate float64) (float64, float64, float64) {
+	earningBeforeTax := revenue - expenses
+	earningAfterTax := (revenue  - expenses) * (1 - taxRate / 100)
+	ratio := earningBeforeTax / earningAfterTax
+	return earningBeforeTax, earningAfterTax, ratio
 }
