@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 /* 
  Practices exercise
  Ask user for revenue, expenses, and tax rate
@@ -11,9 +10,14 @@ import "fmt"
  Print all result to console
 */
 func main() {
-	revenue := askAndScan("Write your Revenue:")
-	expenses := askAndScan("Write your Expenses:")
-	taxRate := askAndScan("Write your Tax rate:")
+	revenuCalculator()
+	bank()
+}
+
+func revenuCalculator() {
+	revenue := askAndScanCalculator("Write your Revenue:")
+	expenses := askAndScanCalculator("Write your Expenses:")
+	taxRate := askAndScanCalculator("Write your Tax rate:")
 	
 	earningBeforeTax, earningAfterTax, ratio := calculateEbtEatAndRatio(revenue, expenses, taxRate)
 
@@ -22,7 +26,7 @@ func main() {
 	fmt.Printf("Ratio is: %.1f\n", ratio)
 }
 
-func askAndScan(ask string) float64 {
+func askAndScanCalculator(ask string) float64 {
 	var result float64
 	fmt.Print(ask)
 	fmt.Scan(&result)
