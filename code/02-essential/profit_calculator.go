@@ -4,7 +4,7 @@ import "fmt"
 
 
 /* 
- Practices excercise
+ Practices exercise
  Ask user for revenue, expenses, and tax rate
  Calculate
  Earn before tax, Earn after tax (profit) and ratio = Earn before tax / profit
