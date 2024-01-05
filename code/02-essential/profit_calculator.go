@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+
+/* 
+ Practices excercise
+ Ask user for revenue, expenses, and tax rate
+ Calculate
+ Earn before tax, Earn after tax (profit) and ratio = Earn before tax / profit
+ Print all result to console
+*/
 func main() {
 	var revenue, expenses, taxRate float64
 
