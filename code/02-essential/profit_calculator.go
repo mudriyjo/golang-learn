@@ -17,9 +17,9 @@ func main() {
 	
 	earningBeforeTax, earningAfterTax, ratio := calculateEbtEatAndRatio(revenue, expenses, taxRate)
 
-	fmt.Printf("Earning before tax is: %.1f", earningBeforeTax)
-	fmt.Printf("Earning after tax is: %.1f", earningAfterTax)
-	fmt.Printf("Ratio is: %.1f", ratio)
+	fmt.Printf("Earning before tax is: %.1f\n", earningBeforeTax)
+	fmt.Printf("Earning after tax is: %.1f\n", earningAfterTax)
+	fmt.Printf("Ratio is: %.1f\n", ratio)
 }
 
 func askAndScan(ask string) float64 {
